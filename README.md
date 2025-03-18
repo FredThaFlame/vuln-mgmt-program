@@ -212,9 +212,40 @@ So, in summary, our focus should be on updating Wireshark, addressing insecure p
 
 The Change Control Board (CAB) reviewed and approved the plan to remove insecure protocols and cipher suites. The plan included a rollback script and a tiered deployment approach.  
 
-<a href="https://youtu.be/zOFPkTa9kY8" target="_"><img width="600" src="https://github.com/user-attachments/assets/07164e63-fbce-471a-b469-29a6d41b7bb8"/></a>
+# Vulnerability Remediation Discussion  
 
-[Meeting Video](https://youtu.be/zOFPkTa9kY8)
+**Change Board Rep:** Next on the list are a couple of vulnerability remediations for the server team:  
+1. Removal of insecure protocols  
+2. Removal of insecure cipher suites  
+
+It looks like Josh from the Risk Department is working with Jimmy from Infrastructure on this. Jimmy, do you want to walk us through the technical aspects of the change?  
+
+**James:** Normally, I would, but Josh actually built the solution. We're still getting used to the process, so I'd like him to explain it.  
+
+**Fred:** Sure! Essentially, the presence of insecure cipher suites and protocols means the system can still negotiate and use deprecated algorithms or protocols. If it connects to a server that only supports these insecure options, it may use them.  
+
+These settings are controlled through the Windows registry, and the fix is straightforward. We developed a PowerShell script that disables all insecure protocols and ciphers while enabling secure, standardized ones that meet today's security requirements.  
+
+**Lead Sys Engr:** That sounds good, but what if something goes wrong? Do we have a rollback plan?  
+
+**Fred:** Absolutely. We're implementing a tiered deployment:  
+- First, a small pilot group of computers  
+- Then, pre-production testing  
+- Finally, full deployment to production  
+
+Additionally, we have an automated rollback script for each remediation. If any issues arise, the script restores the original protocols and ciphers.  
+
+**Change Board Rep:** That sounds solid. Since the fixes are simple registry updates, I’m not too concerned.  
+
+**Fred:** Exactly!  
+
+**Change Board rep:** Any other questions?  
+
+(*silence*)  
+
+Alright, that wraps up this week’s CAP meeting. See you all next week!  
+
+**Group:** See you later! 
 
 ---
 ### Step 10 ) Remediation Effort
