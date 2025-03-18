@@ -89,47 +89,34 @@ The team collaborates with the server team to initiate scheduled credential scan
 
 # Vulnerability Scan Discussion  
 
-**Fred:** Morning! How are you doing?  
+**Fred:** Morning!  
 
-**James:** Not bad for a Monday. And you?  
+**Alex:** Good morning. I heard you're ready to conduct some scans.  
 
-**Fred:** Still alive, so I can’t complain. Before we dive into the vulnerabilities, how did the scan go on your end? Any outages, overutilization, or other issues?  
+**Fred:** Yep! Now that our vulnerability management policy is in place, I wanted to start scheduling credentialed scans of your environment.  
 
-**James:** The scan went well. We were monitoring it, and aside from all the open connections, we wouldn’t have even noticed it was happening.  
+**Alex:** Sounds good. What’s involved, and how can we help?  
 
-**Fred:** That’s good news. I expected as much. We’ll keep monitoring going forward, but I don’t anticipate any resource utilization issues. Do you mind if I jump into the vulnerability findings?  
+**Fred:** We're planning to run weekly scans on the server infrastructure. We estimate it will take about 4 to 6 hours to scan all 2,200 assets. We'll need administrative credentials to allow the scan engine to remotely log into the targets for a more thorough assessment.  
 
-**James:** Not at all, go ahead.  
+**Alex:** Whoa, hold on. What exactly does the scanning process entail? I'm concerned about resource utilization. Also, you need admin credentials for all 200 machines? That doesn’t sound very secure.  
 
-**Fred:** Cool. I’ll share my screen real quick.  
+**Fred:** Those are valid concerns. The scan engine sends specific traffic to the servers to check for vulnerabilities. It looks into registry settings, outdated software, and insecure protocols or cipher suites. That’s why we require credentials—to perform a deeper, more accurate assessment.  
 
-The majority of these vulnerabilities stem from Wireshark being installed—it’s just super outdated. That’s the main issue.  
+**Alex:** I see. As long as it doesn’t impact server availability, we should be okay.  
 
-One interesting thing I found is that the local guest account on the servers belongs to a group—and that group is part of the local administrators group. I’m not sure why that is.  
+**Fred:** Absolutely. Let’s start by scanning a single server and monitor resource utilization before expanding the scope.  
 
-Some vulnerabilities might resolve themselves through Windows updates, like this Microsoft Edge Chromium one. I’m also unsure about another one, but it could be fixed by updates as well.  
+**Alex:** Not a bad idea. Regarding credentials, can you use Active Directory? Maybe set up dedicated credentials that remain disabled until the scan begins, then re-enable them just for the scan. Once it's finished, we can deprovision or disable them again—kind of a just-in-time access approach.  
 
-We don’t need to worry about the self-signed certificate since it’s just the computer’s own certificate. However, the medium-strength cipher suites and the use of TLS 1.0 and 1.1 are more concerning. These are deprecated and should be addressed.  
+**Fred:** That sounds perfect. I'll ask Susan to automate the account provisioning process.  
 
-So, in summary, our focus should be on updating Wireshark, addressing insecure protocols and cipher suites, and removing the guest account from the admin group.  
+**Alex:** Great. Let me know when the credentials are set up.  
 
-**Fred:** That’s interesting. The good news is that most of our servers likely have the same vulnerabilities, so remediation should be more straightforward.  
+**Fred:** Will do. Talk soon!  
 
-**James:** Yeah, a uniform setup actually helps. Do you foresee any issues with fixing the cipher suites and insecure protocols?  
+**Alex:** See you later.  
 
-**Fred:** I highly doubt it. We’ll run it through the next Change Control Board. Uninstalling Wireshark and fixing the guest account shouldn’t be an issue either—those shouldn’t have been on the servers in the first place. I’ll check with our sysadmins about that.  
-
-**James:** Sounds good. I’ll start building out some remediation packages to make the fixes easier on your end.  
-
-**Fred:** That would be great. Oh, by the way, do you have something in place to handle the Windows update-related vulnerabilities? Do you already have patch management set up?  
-
-**James:** Yep, I’m not too worried about that. Windows updates should take care of those automatically by next week. We have a patch management system in place.  
-
-**Fred:** Excellent. I’ll research the best way to remediate these issues and update you before the next Change Control Board meeting.  
-
-**James:** Sounds good. Talk to you soon.  
-
-**Fred:** Cool, talk soon!  
 
 
 [YouTube Video: Initial Discovery Scan](https://youtu.be/lg068WA4SKM)
