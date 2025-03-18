@@ -162,9 +162,49 @@ The server team received remediation scripts and scan reports to address key vul
 
 The server team reviewed vulnerability scan results, identifying outdated software, insecure accounts, and deprecated protocols. The remediation packages were prepared for submission to the Change Control Board (CAB). 
 
-<a href="https://youtu.be/0tjjFewxSNw" target="_"><img width="600" src="https://github.com/user-attachments/assets/03027c66-5f7c-42d0-b6dd-09d053c040b1"/></a>
+# Vulnerability Scan Discussion  
 
-[Meeting Video](https://youtu.be/0tjjFewxSNw)
+**Fred:** Morning! How are you doing?  
+
+**James:** Not bad for a Monday. And you?  
+
+**Fred:** Still alive, so I can’t complain. Before we dive into the vulnerabilities, how did the scan go on your end? Any outages, overutilization, or other issues?  
+
+**James:** The scan went well. We were monitoring it, and aside from all the open connections, we wouldn’t have even noticed it was happening.  
+
+**Fred:** That’s good news. I expected as much. We’ll keep monitoring going forward, but I don’t anticipate any resource utilization issues. Do you mind if I jump into the vulnerability findings?  
+
+**James:** Not at all, go ahead.  
+
+**Fred:** Cool. I’ll share my screen real quick.  
+
+The majority of these vulnerabilities stem from Wireshark being installed—it’s just super outdated. That’s the main issue.  
+
+One interesting thing I found is that the local guest account on the servers belongs to a group—and that group is part of the local administrators group. I’m not sure why that is.  
+
+Some vulnerabilities might resolve themselves through Windows updates, like this Microsoft Edge Chromium one. I’m also unsure about another one, but it could be fixed by updates as well.  
+
+We don’t need to worry about the self-signed certificate since it’s just the computer’s own certificate. However, the medium-strength cipher suites and the use of TLS 1.0 and 1.1 are more concerning. These are deprecated and should be addressed.  
+
+So, in summary, our focus should be on updating Wireshark, addressing insecure protocols and cipher suites, and removing the guest account from the admin group.  
+
+**Fred:** That’s interesting. The good news is that most of our servers likely have the same vulnerabilities, so remediation should be more straightforward.  
+
+**James:** Yeah, a uniform setup actually helps. Do you foresee any issues with fixing the cipher suites and insecure protocols?  
+
+**Fred:** I highly doubt it. We’ll run it through the next Change Control Board. Uninstalling Wireshark and fixing the guest account shouldn’t be an issue either—those shouldn’t have been on the servers in the first place. I’ll check with our sysadmins about that.  
+
+**James:** Sounds good. I’ll start building out some remediation packages to make the fixes easier on your end.  
+
+**Fred:** That would be great. Oh, by the way, do you have something in place to handle the Windows update-related vulnerabilities? Do you already have patch management set up?  
+
+**James:** Yep, I’m not too worried about that. Windows updates should take care of those automatically by next week. We have a patch management system in place.  
+
+**Fred:** Excellent. I’ll research the best way to remediate these issues and update you before the next Change Control Board meeting.  
+
+**James:** Sounds good. Talk to you soon.  
+
+**Fred:** Cool, talk soon!  
 
 ---
 
