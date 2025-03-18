@@ -48,9 +48,28 @@ This phase focuses on drafting a Vulnerability Management Policy as a starting p
 
 In this phase, a meeting with the server team introduces the draft Vulnerability Management Policy and assesses their capability to meet remediation timelines. Feedback leads to adjustments, like extending the critical remediation window from 48 hours to one week, ensuring collaborative implementation.
 
-<a href='https://youtu.be/8g6uafc6LjE' target="_"><img width="600" alt="image" src="https://github.com/user-attachments/assets/549d21f4-26c2-412d-9117-d7b6835aedbf"></a>
+# Policy Discussion
 
-[YouTube Video: Stakeholder Policy Buy-In Meeting](https://youtu.be/8g6uafc6LjE)
+**Fred:** Good morning, James. How has everything been? I know everyone’s been busy these last few weeks.  
+
+**James:** Good morning, Fred. Yeah, it’s been a bit hectic, but we’re hanging in there. Thanks for asking. I had a chance to read through the policy draft, and overall, it makes sense. However, with our current staffing, we can’t meet the aggressive remediation timelines, especially the 48-hour window for critical vulnerabilities.  
+
+**Fred:** Yeah, I totally understand. It is a bit aggressive, especially to start. Perhaps we can extend the critical close to one week for now as a compromise, and reserve the 48-hour window for really severe, zero-day vulnerabilities.  
+
+**James:** That sounds reasonable. We appreciate the flexibility. Could we have a bit of leeway in the beginning as we get used to the remediation and patching process? Maybe for the first few months?  
+
+**Fred:** Absolutely. Once the policy is finalized, we’ll officially start the program. But we’re planning to give all departments about six months to adjust and get familiar with the process. Does that sound fair?  
+
+**James:** Thanks, Fred. We’ll do our best. I appreciate you including us in the decision-making process. It really makes us feel like we’re part of the solution.  
+
+**Fred:** Of course! We’re all in this together. Thanks for working with us.  
+
+**James:** No problem. Thanks for keeping the meeting short.  
+
+**Fred:** Yeah, those are my favorite types. Bye for now.  
+
+**James:** See you later!  
+
 
 ---
 
