@@ -97,7 +97,8 @@ The team collaborates with the server team to initiate scheduled credential scan
 
 In this phase, an insecure Windows Server is provisioned to simulate the server team's environment. After creating vulnerabilities, an authenticated scan is performed, and the results are exported for future remediation steps.  
 
-<img width="635" alt="image" src="https://github.com/user-attachments/assets/937cccbd-36bb-4445-97b9-e915085cda81" style="border: 2px solid black;">
+![image](https://github.com/user-attachments/assets/c7ad0fa4-470a-4725-be8f-feb459ae139f)
+
 
 [Scan 1 - Initial Scan](https://drive.google.com/file/d/1RBPVj_azKJMwmRZ8QILlb4hxIjQU3wQ7/view?usp=drive_link)
 
@@ -153,7 +154,9 @@ The Change Control Board (CAB) reviewed and approved the plan to remove insecure
 The server team used a PowerShell script to remove outdated Wireshark. A follow-up scan confirmed successful remediation.  
 [Wireshark Removal Script](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/remediation-wireshark-uninstall.ps1)  
 
-<img width="634" alt="image" src="https://github.com/user-attachments/assets/7b4f9ab2-d230-4458-ac0f-c0ff070ae79a">
+![image](https://github.com/user-attachments/assets/2f81470a-40d5-4d5e-8b64-a01643d0d2f4)
+
+
 
 [Scan 2 - Third Party Software Removal](https://drive.google.com/file/d/1UiwPPTtuSZKk02hiMyXf31pXUIeC5EWt/view?usp=drive_link)
 
@@ -164,7 +167,8 @@ The server team used PowerShell scripts to remediate insecure protocols and ciph
 [PowerShell: Insecure Protocols Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-protocols.ps1)
 [PowerShell: Insecure Ciphers Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-cipher-suites.ps1)
 
-<img width="630" alt="image" src="https://github.com/user-attachments/assets/0e96120d-8ec9-4f76-8e42-79c752200010">
+![image](https://github.com/user-attachments/assets/3b7cf460-998f-4efd-ac4d-68e559f1ad61)
+
 
 [Scan 3 - Ciphersuites and Protocols](https://drive.google.com/file/d/1Qc6-ezQvwReCGUZNtnva0kCZo_-zW-Sm/view?usp=drive_link)
 
@@ -174,7 +178,8 @@ The server team used PowerShell scripts to remediate insecure protocols and ciph
 The server team removed the guest account from the administrator group. A new scan confirmed remediation, and the results were exported for comparison.  
 [PowerShell: Guest Account Group Membership Remediation](https://github.com/joshmadakor1/lognpacific-public/blob/main/automation/toggle-guest-local-administrators.ps1)  
 
-<img width="627" alt="image" src="https://github.com/user-attachments/assets/870a3eac-3398-44fe-91c0-96f3c2578df4">
+![image](https://github.com/user-attachments/assets/bf951178-785f-492b-9338-f8bca30db225)
+
 
 [Scan 4 - Guest Account Group Removal](https://drive.google.com/file/d/1jVgikjfrV1YjOcL3QRT_oUB0Y82w22V7/view?usp=drive_link)
 
@@ -183,7 +188,8 @@ The server team removed the guest account from the administrator group. A new sc
 
 Windows updates were re-enabled and applied until the system was fully up to date. A final scan verified the changes  
 
-<img width="627" alt="image" src="https://github.com/user-attachments/assets/870a3eac-3398-44fe-91c0-96f3c2578df4">
+![image](https://github.com/user-attachments/assets/9f5d3fa9-25c2-44c9-ad3b-678cdcb4d539)
+
 
 [Scan 5 - Post Windows Updates](https://drive.google.com/file/d/1tmDjeHl5uiGitRwWy8kFRi33q-nGi1Zt/view?usp=drive_link)
 
